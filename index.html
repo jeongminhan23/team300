@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Team 300</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&family=East+Sea+Dokdo&display=swap');
+
+        * {
+            font-family: 'East Sea Dokdo', serif;
+            font-size: 30px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #333;
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            height: 100vh;
+            padding: 30px 0 0 0;
+        }
+
+        .member {
+            flex: 0 0 calc(20% - 20px);
+            /* 4개의 아이템을 가로로 배치 */
+            background-color: blanchwedalmond;
+            border-radius: 100px;
+            box-shadow: 0 4px 6px (0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .member:hover {
+            transform: scale(1.1);
+        }
+
+        .member img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        section {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 50px auto 150px auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0.1% 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .center-gap {
+            flex: 1;
+            height: 100vh;
+            /* 원하는 가운데 공간의 높이 설정 */
+            color: white;
+            background-image: url(https://velog.velcdn.com/images/varjm/post/122f1718-0a87-4a53-ba8e-bb73b81b8fdb/image.png);
+            background-position: center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            margin-bottom: 30px;
+        }
+
+        .member>img {
+            object-fit: cover;
+        }
+
+        #logo {
+            height: 150px;
+        }
+
+        #poster {
+            width: 400px;
+            height: 600px;
+            margin: 100px 30px 0 0;
+        }
+
+        #team_intro {
+            display: inline-flex;
+        }
+
+        #team_detail>h1 {
+            color: red;
+        }
+
+        footer {
+            background-color: rgba(255, 0, 0, 0.562);
+            width: 100%;
+            height: 30px;
+            /* footer의 높이 */
+            margin-top: 0;
+            padding-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backg">
+        <header>
+            <div>
+                <div>
+                    <img id="logo"
+                        src="https://velog.velcdn.com/images/varjm/post/d8e850e7-3b53-47c8-b107-1dd6590154fa/image.png">
+                </div>
+                <div id="team_intro">
+                    <img id="poster"
+                        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MjdfNzkg%2FMDAxNjgyNTgxNjAzNjUx.HKLwaOG6HZmoAMQeT9H3mu711mhpZSRyFaH4EgtnGf8g.3WhRRC0D1MmynlOpHOjh8ph6h7cWYqv-Kttz4D9APWYg.PNG.aisop%2Fimage.png&type=sc960_832">
+
+                    <div id="team_detail">
+                        <h1>팀 소개</h1>
+                        안녕하세요 A반 6조 팀300 입니다.&#x1F603<br>
+                        여러분은 영화 300하면 떠오르는 이미지가 있으신가요?<br>
+                        네 맞습니다. 피튀기며 전사들이 싸우는 모습이 생각이 납니다.<br>
+                        그래서 저희도 1인당 300인분 하겠다! &#x1F525는 마음으로<br>
+                        몸과 마음을 가다듬고 전장터에 무기를 들고 임하듯이 <br>
+                        끝까지 힘내겠다는 마음에서 이렇게 팀 명을 지어보았습니다.<br>
+
+                        <h1>우리 팀의 목표</h1>
+                        포기하지않고 성실히 임해서 수료후에도 팀에 도움이 되는 개발자가 되자!!
+
+                        <h1>우리 팀의 특징</h1>
+                        내향인들의 모임으로 조용하지만 알고보면 숨은 보석들의 모임&#x1F48E
+
+                        <h1>우리 팀의 약속</h1>
+                        <div>
+                            - 지각하지말자<br>
+                            - 적극적으로 참여하자<br>
+                            - 구체적으로 찾아보기<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="center-gap"></div>
+        <section>
+            <div id="member1" class="member">
+                <img src="https://postfiles.pstatic.net/MjAyMDAzMTdfMTk4/MDAxNTg0NDQxNjY2NTA3.CbF5SIXoDm9xav6iFvIuoXsDe2MbTPzTdsXdO6d1Co8g.QMut1JKQSKypnnDqN5ApkEEEKDk3A4drDNe7Rn1UnuEg.JPEG.yongyongxx/papercup_352406_1600806.jpg?type=w966"
+                    alt="팀원 이미지">
+                <h2>김건우</h2>
+                <p>팀 리더</p>
+            </div>
+            <div id="member2" class="member">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpdBYa_CCmemcSk1iHYAqC-fybCUoz5VYmQ&usqp=CAU"
+                    alt="팀원 이미지">
+                <h2>김찬모</h2>
+                <p>오른손</p>
+            </div>
+            <div id="member3" class="member">
+                <img src="https://velog.velcdn.com/images/varjm/post/8e99a859-063a-4ae2-ab71-5ed7a405d630/image.png"
+                    alt="팀원 이미지">
+                <h2>한정민</h2>
+                <p>개발자</p>
+            </div>
+            <div id="member4" class="member">
+                <img src="https://cdn.lecturernews.com/news/photo/202104/65871_251074_5837.jpg" alt="팀원 이미지">
+                <h2>김민주</h2>
+                <p>마케터</p>
+            </div>
+        </section>
+        <footer>
+            <h2>Copyright © 2023 우리는 일당 300!! 코딩을 뿌수러 왔다!!</h2>
+        </footer>
+    </div>
+</body>
+
+</html>
