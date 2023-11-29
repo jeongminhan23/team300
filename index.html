@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <!-- html 파일의 인코딩을 알려주는 태그 -->
     <title>Team 300</title>
+    <!-- 제이쿼리사용하겠다! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&family=East+Sea+Dokdo&display=swap');
         /*폰트 임포트 하기*/
@@ -141,10 +143,14 @@
 
         #guestbook_button {
             background-color: black;
-            color: rgba(255, 0, 0, 0.562);;
+            box-shadow: 10px;
+            color: rgba(255, 0, 0, 0.562);
+            ;
         }
 
-
+        .guestbook-entries {
+            color: white;
+        }
     </style>
 </head>
 
@@ -228,41 +234,101 @@
         <a style="display:scroll;position:fixed;bottom:0px;right:3px;" rel="nofollow" href="#scrollbottom"
             title="Go to Bottom" style="font-size:2.0em">아래로↓</a>
     </footer>
-    
+
 
     <section id="guestbook">
         <h1 style="color:black">&#x1F4E3팀300에게 응원 한마디&#x1F4E3</h1>
         <form id="guestbook-form" style="margin-bottom: 30px;">
             <label for="name"></label>
-            <input type="text" id="name" name="name" required placeholder="이름">
-    
+            <input type="text" id="name" name="name" required placeholder="방문자이름">
+
             <label for="message"></label>
             <input id="message" name="message" rows="1" required placeholder="메시지"></input>
-    
-            <button type="button" class="btn btn-dark" onclick="addGuestbookEntry()" id="guestbook_button">방명록 남기기</button>
+
+            <button type="button" class="btn btn-dark" onclick="addGuestbookEntry()" id="guestbook_button">방명록
+                남기기</button>
         </form>
-    
+
         <div id="guestbook-entries">
             <!-- 작성한 방명록이 표시되는 공간 -->
         </div>
     </section>
 
+    
 
-    <script>
+
+    <script type="module">
+        // Firebase SDK 라이브러리 가져오기
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+        import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9V7dUdyYq66J-zsP0b9F5mxyPS38b894",
+            authDomain: "sparta-a7f45.firebaseapp.com",
+            projectId: "sparta-a7f45",
+            storageBucket: "sparta-a7f45.appspot.com",
+            messagingSenderId: "642799696143",
+            appId: "1:642799696143:web:3c30f459924e64f7e2667a",
+            measurementId: "G-4MZ01WJNH4"
+        };
+
+
+        // Firebase 인스턴스 초기화
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+
+
+        // 파이어베이스에 방명록 내용을 저장하기
+        $("#guestbook_button").click(async function () {
+            let name = $('#name').val();
+            let message = $('#message').val();
+            let doc = {
+                'name': name,
+                'message': message
+            };
+            await addDoc(collection(db, "visiter"), doc);
+            alert('응원 감사합니다!♡')
+            window.location.reload();
+        })
+
+        //파이어베이스에 저장된 내용을 불러오기
+        let docs = await getDocs(collection(db, "visiter"));
+        docs.forEach((doc) => {
+            let row = doc.data();
+            let name = row['name'];
+            let message = row['message'];
+            let temp_html = `
+            <div class="col">
+                    <div class="guestbook-entries">
+                        <p class="card-text">${name}:${message}</p>
+                    </div>
+             </div>`;
+            /*새로붙일카드형식 붙여줘*/
+            $('#guestbook-form').append(temp_html);
+        });
+
+
+
+
         function addGuestbookEntry() {
             // 이 함수를 통해 방명록에 새 항목을 추가할수 있다
             var nameInput = document.getElementById('name');
             var messageInput = document.getElementById('message');
-    
+
             var name = nameInput.value;
             var message = messageInput.value;
-    
+
             // 방명록에 새로운 항목 추가하기
             var guestbookEntries = document.getElementById('guestbook-entries');
             var entryDiv = document.createElement('div');
             entryDiv.innerHTML = '<strong>' + name + ':</strong> ' + message;
             guestbookEntries.appendChild(entryDiv);
-    
+
             // 입력 필드 초기화
             nameInput.value = '';
             messageInput.value = '';
