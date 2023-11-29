@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap" rel="stylesheet">
@@ -23,6 +24,7 @@
             background-image: url(https://img.freepik.com/premium-vector/website-icon-website-browser-mockup-with-empty-white-background-close-collapse-and-maximize-buttons-flat-style-vector-black-line-icon-on-a-orange-background_748571-127.jpg?size=626&ext=jpg&ga=GA1.1.1516372242.1701221274&semt=ais);
             background-size: 1570px;
             background-position: center;
+            
 
 
 
@@ -263,18 +265,26 @@
 
 
       
-        #goBackButton {
-            padding: 5px;
-            background-color: transparent;
-            color: #ffffff;
+       
+
+         /* 뒤로가기 버튼 스타일 */
+         #backButton {
+            background: transparent;
             border: none;
-            border-radius: 0%;
             cursor: pointer;
-            position: absolute;
-            top: 71px;
-            right: 480px;
-            font-size: 50px;
-            
+            padding: 0;
+            position: fixed;
+            top: 120px;
+            right: 1433px;
+            z-index: 999; /* 다른 요소 위에 표시 */
+        }
+
+        /* 이미지 스타일 */
+        #backButton img {
+            width: 70px; /* 이미지의 크기 조절 */
+            height: auto;
+            vertical-align: middle;
+            border-radius: 150px;
         }
 
         
@@ -293,15 +303,26 @@
 <body>
 
 
+ 
+
+<script>
+    // 뒤로가기 함수
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+
     <div class="container">
+        
         <div id="1sec">
+            
 
             <section id="section1" class="section" style="height: -70px;">
                 <img class="chan"
                     src="https://postfiles.pstatic.net/MjAyMzExMjhfODgg/MDAxNzAxMTI4Mjk0MDg0.oqT15UaX9UpI8KC1cGgXiWVPX2Rur7x1vtu6qDt-MVMg.dWvFCho5tb2EvgZEl8lyhiRWxlPvV1-D4sMFpGHyQkog.PNG.abczza/image.png?type=w773"
                     referrerpolicy="no-referrer">
                 <p>!</p>
-
                 <div class="typing-container">
                     <h1 id="typing-text"></h1>
                 </div>
@@ -355,6 +376,15 @@
                             <dt>전공</dt>
                             <dd>호텔경영과</dd>
                         </div>
+                        <div>
+                            <dt>좌우명</dt>
+                            <dd>선택한일에후회말자</dd>
+                        </div>
+                        <div>
+                            <dt>목표</dt>
+                            <dd>기본만하기</dd>
+                        </div>
+
                     </dl>
                 </div>
 
@@ -400,10 +430,7 @@
             </section>
         </div>
 
-        <section id="section4" class="section">
-            <h2>Portfolio</h2>
-            <p>Showcase your projects and work...</p>
-        </section>
+        
         <div id="4sec">
             <section id="section5" class="section">
 
@@ -471,18 +498,12 @@
         displayDateTime(); // 초기 시간과 날짜 표시
         setInterval(displayDateTime, 1000); // 1초마다 시간과 날짜 업데이트
     </script>
+<div>
+    <button id="backButton" onclick="goBack()">
+        <img src="https://postfiles.pstatic.net/MjAyMzExMjlfMjg5/MDAxNzAxMjQ4MDA0NjQz.uTknZY2Pea0nXGLI3M0INuwOV6epP9tmVL57PQDb3Swg.Yn7AWTsPTkVH8cjVH0MGk1iFTtCaK8y3FCLcb0N4wasg.JPEG.abczza/300.jpg?type=w773" alt="Back">
+    </button>
+</div>
 
-    <button id="goBackButton"> <p class="xx">X</p></button>
-
-    <script>
-        // 버튼 클릭 시 창을 닫는 함수
-        function goBack() {
-            window.history.back();
-        }
-
-        // 버튼 클릭 이벤트에 함수 연결
-        document.getElementById('goBackButton').addEventListener('click', goBack);
-    </script>
 
 </body>
 
