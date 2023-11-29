@@ -121,6 +121,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
         }
 
     </style>
@@ -197,14 +198,14 @@
                     </a><br>
                 </div>
                 <div class="contacts">
-                    <a href="미정" id="instagram" class="contact_a">
+                    <a id="instagram" class="contact_a" onclick="showAlert()">
                         <img class="contact_img"
                             src="https://velog.velcdn.com/images/varjm/post/123cd841-bf32-4a32-b28f-e4bbb82e3660/image.png"
                             alt="instagram_url">
                     </a><br>
                 </div>
                 <div class="contacts">
-                    <a href="미정" id="Kakaotalk" class="contact_a">
+                    <a id="Kakaotalk" class="contact_a" onclick="showAlert()">
                         <img class="contact_img"
                             src="https://i.pinimg.com/564x/86/39/85/8639859040131440e24166acfe00dcb0.jpg"
                             alt="instagram_url">
@@ -222,6 +223,13 @@
         </div>
 
     </div>
+
+    <script>
+        // showAlert 함수 정의
+        function showAlert() {
+            alert("아직 없습니다");
+        }
+    </script>
 </body>
 
 </html>
