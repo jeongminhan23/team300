@@ -39,13 +39,13 @@
     }
     #section2 {
         flex-direction:row;
-        justify-content:space-evenly;
+        justify-content:center;
         flex-wrap:nowrap;
 
     }
 
     #section3 {
-        background-color: bisque;
+        background-color: rgb(246, 229, 208);
     }
     footer {
         width: 100%;
@@ -68,13 +68,13 @@
 */
     .Hi {
         font-size: 90px;
-        color: rgb(53, 133, 100);
+        color: rgb(15, 181, 112);
     }
 
     .imagecard {
         border-radius: 50%;
-        width: 350px;
-        height: 350px;
+        width: 400px;
+        height: 400px;
         overflow: hidden;
         background-position: center;
         background-size: none;
@@ -112,18 +112,23 @@
     }
     */
     #hoverimage {}
-
+    #introduction_text {
+        margin-bottom: 20px;
+    }
     #hoverimage:hover {
         cursor: pointer;
     }
-
-    .imagecard {}
+    #introduction_text {
+        color:rgb(44, 66, 57);
+        letter-spacing: 3px;
+    }
+    
 </style>
 
 
 <body>
     <div class="container">
-        <section id="section1" style="background-color:bisque;" class="section">
+        <section id="section1" style="background-color:rgb(243, 235, 226);" class="section">
             <section style="height:90vh;" class="section">
                 <h1 class="Hi">안녕하세요!</h1>
             </section>
@@ -133,13 +138,29 @@
             </footer>
         </section>
 
-        <section  style="background-color:bisque" class="section">
+        <section  style="background-color:rgb(235, 226, 214)" class="section">
             <section id="section2" style="height:90vh; width:100%" class="section">
-                
+                <div style="width:11%; height:50vh; font-size: 23px; text-align:left; line-height:1.3em; margin-right: 10px;"> 
+                    <p id="introduction_text">나이</p>
+                    <p id="introduction_text">사는 곳</p>
+                    <p id="introduction_text">MBTI</p>
+                    <p id="introduction_text">성격</p>
+                    <p id="introduction_text">협업 스타일</p>
+                    <p id="introduction_text"></p>
+                </div>
+                <div style="width:25%; height:50vh; font-size: 23px; text-align:left; line-height:1.3em; margin-right: 50px;"> 
+                    <p id="introduction_text">: 29살, 94년생 </p>
+                    <p id="introduction_text">: 서울 </p>
+                    <p id="introduction_text">: INTP </p>
+                    <p id="introduction_text">: 신중 </p>
+                    <p id="introduction_text">: 배려하고 팀이 잘 나아갈 수 있게 노력함</p>
+                    <p id="introduction_text"></p>
+                </div>
                 <div class="imagecard">
                     <img src="https://velog.velcdn.com/images/kkw0426/post/b7e33fbc-1af8-485c-9ac7-a1d6eeddf3cb/image.jpeg"
                         class="card-img-top" alt="...">
                 </div>
+                
                 
             </section>
             <footer>
@@ -160,7 +181,7 @@
         </section>
 
         <section id="section4" class="section">
-            <h2>Portfolio</h2>
+            <h2>Contact</h2>
             <p>Showcase your projects and work...</p>
         </section>
 
@@ -168,6 +189,12 @@
             <h2>Contact Me</h2>
             <p>Let's connect! Reach out to me...</p>
         </section>
+    </div>
+
+    <div style="position: absolute; right: 80px; bottom: 50px;">
+        <a href="https://jeongminhan23.github.io/team300/">
+            <img style="width: 50px; height: 50px;" src="https://velog.velcdn.com/images/varjm/post/0302b9a2-77fb-4edd-9309-eb492f60b3f9/image.png">
+        </a>
     </div>
 </body>
 
