@@ -16,7 +16,7 @@
             margin: 0;
             font-family: 'Arial', sans-serif;
         }
-               
+
         .container {
             scroll-snap-type: y mandatory;
             overflow-y: scroll;
@@ -79,8 +79,6 @@
             border-radius: 10px;
         }
 
-        #favorite {}
-
         #favorite_imgs {
             display: inline-flex;
             margin: 100px 0 100px 0;
@@ -97,15 +95,34 @@
             background-color: white;
         }
 
-        .img-velog {
-            width: 100px;
-            height: 100px;
-            margin-top: 100px;
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .img-velog:hover {
-            transform: scale(1.4);
+        #contact_detail {
+            display: flex;
         }
+
+        .contact_img {
+            width: 100px;
+            height: 100px;
+            margin: 100px 50px 0 0;
+        }
+
+        .contact_img:hover {
+            transform: scale(1.1);
+        }
+
+        .contact_a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 
 </head>
@@ -140,19 +157,23 @@
                     <h2>게임</h2>
                 </div>
                 <div>
-                    <img class="favorite_detail" src="https://cdn.imweb.me/upload/S20221129c3c04fdc67a8b/09e904cb8f26f.png">
+                    <img class="favorite_detail"
+                        src="https://cdn.imweb.me/upload/S20221129c3c04fdc67a8b/09e904cb8f26f.png">
                     <h2>고양이</h2>
                 </div>
                 <div>
-                    <img class="favorite_detail" src="https://file.thisisgame.com/upload/nboard/news/2015/10/21/20151021133531_3053.jpg">
+                    <img class="favorite_detail"
+                        src="https://file.thisisgame.com/upload/nboard/news/2015/10/21/20151021133531_3053.jpg">
                     <h2>키티</h2>
                 </div>
                 <div>
-                    <img class="favorite_detail" src="https://blog.kakaocdn.net/dn/kEtR9/btrgfMGHvbz/ULwHeMTVRAhKiykodpkP6K/img.png">
+                    <img class="favorite_detail"
+                        src="https://blog.kakaocdn.net/dn/kEtR9/btrgfMGHvbz/ULwHeMTVRAhKiykodpkP6K/img.png">
                     <h2>영화</h2>
                 </div>
                 <div>
-                    <img class="favorite_detail" src="https://newsimg-hams.hankookilbo.com/2022/12/21/88999d4a-b599-46f3-92e3-28a127e608bf.jpg">
+                    <img class="favorite_detail"
+                        src="https://newsimg-hams.hankookilbo.com/2022/12/21/88999d4a-b599-46f3-92e3-28a127e608bf.jpg">
                     <h2>뮤지컬</h2>
                 </div>
             </div>
@@ -160,18 +181,43 @@
 
         <section id="contact" class="section">
             <h1>CONTACT</h1>
-            <a href="https://velog.io/@varjm">
-                <img class="img-velog"
-                    src="https://velog.velcdn.com/images/velog/profile/9aa07f66-5fcd-41f4-84f2-91d73afcec28/green%20favicon.png"
-                    alt="블로그 주소">
-            </a>
-            <h3>Blog</h3>
+            <div id="contact_detail">
+                <div class="contacts">
+                    <a href="https://velog.io/@varjm" id="velog" class="contact_a">
+                        <img class="contact_img"
+                            src="https://velog.velcdn.com/images/velog/profile/9aa07f66-5fcd-41f4-84f2-91d73afcec28/green%20favicon.png"
+                            alt="velog_url">
+                    </a><br>
+                </div>
+                <div class="contacts">
+                    <a href="https://github.com/jeongminhan23" id="github" class="contact_a">
+                        <img class="contact_img"
+                            src="https://velog.velcdn.com/images/varjm/post/81742c7c-cc5d-476d-b404-e2eba1223435/image.png"
+                            alt="github_url">
+                    </a><br>
+                </div>
+                <div class="contacts">
+                    <a href="미정" id="instagram" class="contact_a">
+                        <img class="contact_img"
+                            src="https://velog.velcdn.com/images/varjm/post/123cd841-bf32-4a32-b28f-e4bbb82e3660/image.png"
+                            alt="instagram_url">
+                    </a><br>
+                </div>
+                <div class="contacts">
+                    <a href="미정" id="Kakaotalk" class="contact_a">
+                        <img class="contact_img"
+                            src="https://i.pinimg.com/564x/86/39/85/8639859040131440e24166acfe00dcb0.jpg"
+                            alt="instagram_url">
+                    </a><br>
+                </div>
+            </div>
         </section>
 
         <!-- 우측아래 고정홈버튼 -->
         <div style="position: absolute; right: 80px; bottom: 50px;">
             <a href="https://jeongminhan23.github.io/team300/">
-                <img style="width: 50px; height: 50px;" src="https://velog.velcdn.com/images/varjm/post/0302b9a2-77fb-4edd-9309-eb492f60b3f9/image.png">
+                <img style="width: 50px; height: 50px;"
+                    src="https://velog.velcdn.com/images/varjm/post/0302b9a2-77fb-4edd-9309-eb492f60b3f9/image.png">
             </a>
         </div>
 
