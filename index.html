@@ -75,7 +75,7 @@
             /* 콘텐츠 항목 사이와 주위에 공간을 분배하는 방법을 정의하고 center는 아이템들을 가운데로 정렬한다.*/
             flex-wrap: wrap;
             /*요소들의 총 넓이가 부모 넓이보다 클 때, 이 요소들을 다음 줄에 이어서 나열 해주는 기능*/
-            margin: 50px auto 150px auto;
+            margin: 50px auto 50px auto;
         }
 
         .center-gap {
@@ -128,6 +128,23 @@
             margin-top: 0;
             padding-bottom: 30px;
         }
+
+        #guestbook {
+            background-color: rgba(255, 0, 0, 0.562);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 50px;
+            margin: 0 auto 55px auto;
+        }
+
+        #guestbook_button {
+            background-color: black;
+            color: rgba(255, 0, 0, 0.562);;
+        }
+
+
     </style>
 </head>
 
@@ -168,7 +185,7 @@
     <div class="center-gap"></div>
     <section>
         <div id="member1" class="member">
-            <a href="https://jeongminhan23.github.io/team300/selfIntroduction">
+            <a href="https://jeongminhan23.github.io/team300/hjm">
                 <img class="member_img"
                     src="https://velog.velcdn.com/images/varjm/post/a843537b-03a6-412d-b5c4-b3f4715685a9/image.jpg"
                     alt="팀원 이미지">
@@ -177,7 +194,7 @@
             <p>팀 리더</p>
         </div>
         <div id="member2" class="member">
-            <a href="https://jeongminhan23.github.io/team300/잡동">
+            <a href="https://jeongminhan23.github.io/team300/hjm">
                 <img class="member_img"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCpdBYa_CCmemcSk1iHYAqC-fybCUoz5VYmQ&usqp=CAU"
                     alt="팀원 이미지">
@@ -195,7 +212,7 @@
             <p>개발자</p>
         </div>
         <div id="member4" class="member">
-            <a href="https://jeongminhan23.github.io/team300/kmj">
+            <a href="https://jeongminhan23.github.io/team300/hjm">
                 <img class="member_img" src="https://cdn.lecturernews.com/news/photo/202104/65871_251074_5837.jpg"
                     alt="팀원 이미지">
             </a>
@@ -211,7 +228,46 @@
         <a style="display:scroll;position:fixed;bottom:0px;right:3px;" rel="nofollow" href="#scrollbottom"
             title="Go to Bottom" style="font-size:2.0em">아래로↓</a>
     </footer>
+    
 
+    <section id="guestbook">
+        <h1 style="color:black">&#x1F4E3팀300 멤버 응원하기&#x1F4E3</h1>
+        <form id="guestbook-form" style="margin-bottom: 30px;">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" required placeholder="이름">
+    
+            <label for="message"></label>
+            <input id="message" name="message" rows="1" required placeholder="메시지"></input>
+    
+            <button type="button" class="btn btn-dark" onclick="addGuestbookEntry()" id="guestbook_button">방명록 남기기</button>
+        </form>
+    
+        <div id="guestbook-entries">
+            <!-- 작성한 방명록이 표시되는 공간 -->
+        </div>
+    </section>
+
+
+    <script>
+        function addGuestbookEntry() {
+            // 이 함수를 통해 방명록에 새 항목을 추가할수 있다
+            var nameInput = document.getElementById('name');
+            var messageInput = document.getElementById('message');
+    
+            var name = nameInput.value;
+            var message = messageInput.value;
+    
+            // 방명록에 새로운 항목 추가하기
+            var guestbookEntries = document.getElementById('guestbook-entries');
+            var entryDiv = document.createElement('div');
+            entryDiv.innerHTML = '<strong>' + name + ':</strong> ' + message;
+            guestbookEntries.appendChild(entryDiv);
+    
+            // 입력 필드 초기화
+            nameInput.value = '';
+            messageInput.value = '';
+        }
+    </script>
 </body>
 
 </html>
