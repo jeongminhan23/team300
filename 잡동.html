@@ -259,6 +259,29 @@
             font-size: 20px;
             margin: 0 0 76px 0;
         }
+
+
+
+      
+        #goBackButton {
+            padding: 5px;
+            background-color: transparent;
+            color: #ffffff;
+            border: none;
+            border-radius: 0%;
+            cursor: pointer;
+            position: absolute;
+            top: 71px;
+            right: 480px;
+            font-size: 50px;
+            
+        }
+
+        
+
+       
+
+
     </style>
 
 
@@ -275,7 +298,8 @@
 
             <section id="section1" class="section" style="height: -70px;">
                 <img class="chan"
-                    src="https://postfiles.pstatic.net/MjAyMzExMjhfODgg/MDAxNzAxMTI4Mjk0MDg0.oqT15UaX9UpI8KC1cGgXiWVPX2Rur7x1vtu6qDt-MVMg.dWvFCho5tb2EvgZEl8lyhiRWxlPvV1-D4sMFpGHyQkog.PNG.abczza/image.png?type=w773" referrerpolicy="no-referrer">
+                    src="https://postfiles.pstatic.net/MjAyMzExMjhfODgg/MDAxNzAxMTI4Mjk0MDg0.oqT15UaX9UpI8KC1cGgXiWVPX2Rur7x1vtu6qDt-MVMg.dWvFCho5tb2EvgZEl8lyhiRWxlPvV1-D4sMFpGHyQkog.PNG.abczza/image.png?type=w773"
+                    referrerpolicy="no-referrer">
                 <p>!</p>
 
                 <div class="typing-container">
@@ -310,7 +334,8 @@
                 <div class="section22">
                     <h2 class="chanmo">WHO?</h2>
                     <img class="manggo"
-                        src="https://postfiles.pstatic.net/MjAyMzExMjhfNDMg/MDAxNzAxMTU3MzQxMDE5.v9N0dapvwJ9nebT1hsdATGQ1AgGfxvShN4rdHbvlvJkg.73b1yD50STPhfwkxBUEDHh7yQEhZobM0F5024d750pUg.JPEG.abczza/%EB%A7%9D%EA%B3%A02.jpg?type=w773" referrerpolicy="no-referrer">
+                        src="https://postfiles.pstatic.net/MjAyMzExMjhfNDMg/MDAxNzAxMTU3MzQxMDE5.v9N0dapvwJ9nebT1hsdATGQ1AgGfxvShN4rdHbvlvJkg.73b1yD50STPhfwkxBUEDHh7yQEhZobM0F5024d750pUg.JPEG.abczza/%EB%A7%9D%EA%B3%A02.jpg?type=w773"
+                        referrerpolicy="no-referrer">
                 </div>
                 <div class="info-about">
                     <dl class="txt-about">
@@ -340,8 +365,8 @@
                 <h2 class="Favorite">my Favorite</h2>
                 <div class="favor">
                     <div class="card" style="width: 18rem;">
-                        <img src="https://postfiles.pstatic.net/MjAyMzExMjhfMTAy/MDAxNzAxMTU3Mzc0NDE4.y74rW_JIOsUPlpqFpOG_mN8Fgg38giIqApFsoQ8Z7UAg.8qq0acwiyIC2YnW-oZa0cuusHM9YIL3VsP3vfFhkLQEg.JPEG.abczza/KakaoTalk_20231128_163651192gfdgdfg.jpg?type=w773"referrerpolicy="no-referrer"
-                            class="card-img-top" style="width: 250px; height: 250px;">
+                        <img src="https://postfiles.pstatic.net/MjAyMzExMjhfMTAy/MDAxNzAxMTU3Mzc0NDE4.y74rW_JIOsUPlpqFpOG_mN8Fgg38giIqApFsoQ8Z7UAg.8qq0acwiyIC2YnW-oZa0cuusHM9YIL3VsP3vfFhkLQEg.JPEG.abczza/KakaoTalk_20231128_163651192gfdgdfg.jpg?type=w773"
+                            referrerpolicy="no-referrer" class="card-img-top" style="width: 250px; height: 250px;">
                         <div class="card-body">
                             <p class="card-text">강아지</p>
                         </div>
@@ -412,10 +437,18 @@
 
     <div id="menu">
         <ul>
-            <li><a href="#1sec">home</a></li>
-            <li><a href="#2sec">who?</a></li>
-            <li><a href="#3sec">favorit</a></li>
-            <li><a href="#4sec">contact</a></li>
+            <div id="menu1">
+                <li><a href="#1sec">home</a></li>
+            </div>
+            <div id="menu1">
+                <li><a href="#2sec">who?</a></li>
+            </div>
+            <div id="menu1">
+                <li><a href="#3sec">favorit</a></li>
+            </div>
+            <div id="menu1">
+                <li><a href="#4sec">contact</a></li>
+            </div>
         </ul>
     </div>
 
@@ -439,6 +472,17 @@
         setInterval(displayDateTime, 1000); // 1초마다 시간과 날짜 업데이트
     </script>
 
+    <button id="goBackButton"> <p class="xx">X</p></button>
+
+    <script>
+        // 버튼 클릭 시 창을 닫는 함수
+        function goBack() {
+            window.history.back();
+        }
+
+        // 버튼 클릭 이벤트에 함수 연결
+        document.getElementById('goBackButton').addEventListener('click', goBack);
+    </script>
 
 </body>
 
