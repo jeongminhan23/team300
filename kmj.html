@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Introduction</title>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+            scroll-behavior: smooth;
+        }
+        .section {
+            height: 100vh;
+            /*100vh는 부모 태그와는 상관없이 보이는 Viewport Height의 100%를 다 쓰겠다는 의미*/
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /*수직 가운데 정렬*/
+            align-items: center;
+            /*수평 가운데 정렬*/
+            text-align: center;
+            /*텍스트 가운데 정렬*/
+            scroll-snap-align: center;
+        }
+        .section h1,
+        .section h2 {
+            margin-bottom: 20px;
+        }
+        .modal{
+            position:absolute;
+            display:none;
+            justify-content: center;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal_body{
+            position:absolute;
+            top:50%; 
+            width:400px; 
+            height:600px; 
+            padding:40px;  
+            text-align: center;
+            background-color: rgb(255,255,255); 
+            border-radius:10px; 
+            box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);  
+            transform:translateY(-50%); 
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="modal">
+        <div class="modal_body">
+            <h2>모달창 제목</h2>
+            <p>모달창 내용 </p>
+            <button class="btn-close-modal">닫기</button>
+        </div>
+    </div> -->
+    
+    
+    <div class="container">
+        <section id="section1" class="section" 
+        style="background-image : 
+        url('https://cdn.imweb.me/upload/S202207202685e30f16e24/f470cb259e73b.jpeg')">
+            <div >
+                <h1><button class="btn-open-modal">Intro</button></h1>
+                <div class="modal">
+                    <div class="modal_body">
+                        <h2>자기소개</h2>
+                        <p>저는 김민주 입니다 </p>
+                        <p>조용하고 차분한 성격을 가진 ISTP 입니다 </p>
+                        <button class="btn-close-modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section2" class="section" style="background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F8ees0%2Fbtq33bjZoFY%2F6SSEPleWKXNwMHlW3p5mvk%2Fimg.jpg')">
+            <div>
+                <h1><button class="btn-open-modal">Advantage</button></h1>
+                <div class="modal">
+                    <div class="modal_body">
+                        <h2>장점</h2>
+                        <p> 주어진 일에 전념하고 집중합니다 </p>
+                        <p> 의사결정을 내릴 때 신중합니다 </p>
+                        <p> 맡은 일에 책임감을 가지고 수행합니다 </p>
+                        <button class="btn-close-modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <section id="section3" class="section" style="background-image: url('https://postfiles.pstatic.net/MjAxNzA1MjJfNTYg/MDAxNDk1NDI4NjU0NTc5.8iDy8xd_VUsble0hznLT6bdH2dDJxh0lKOpPQwkmImcg.GvpqDcdm65V5-obvEBWzTflE6QiLUTg9-32r9x9x5rwg.JPEG.ccmjja123/gangneung-2198025_1920.jpg?type=w966')">
+            <div>
+                <h1><button class="btn-open-modal">Style</button></h1>
+                
+                <div class="modal">
+                    <div class="modal_body">
+                        <h2>스타일</h2>
+                        <p>저는 팀원들의 의견을 경청하고 존중하면서 저의 주장을 제시하는 방식으로 협업을 진행하고 있습니다</p>
+                        <button class="btn-close-modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section4" class="section" style="background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F990822335A03045709')">
+            <div>
+                <h1><button class="btn-open-modal">Dream</button></h1>
+                <div class="modal">
+                    <div class="modal_body">
+                        <h2>목표</h2>
+                        <p>저는 내일배움캠프를 통해 개발의 즐거움을 얻어가고 싶습니다</p>
+                        <button class="btn-close-modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section5" class="section" style="background-image: url('https://images.unsplash.com/photo-1552901464-1449e53709c9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <div>
+                <h1><button class="btn-open-modal">Promise</button></h1>
+                <div class="modal">
+                    <div class="modal_body">
+                        <h2>자신과의 약속</h2>
+                        <p>어제의 나보다 발전된 오늘의 나를 목표로 열심히 달려가겠습니다 </p>
+                        <button class="btn-close-modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        const btnOpenModalList = document.querySelectorAll('.btn-open-modal');
+        const btnCloseModalList = document.querySelectorAll('.btn-close-modal');
+        const modalList = document.querySelectorAll('.modal');
+
+        btnOpenModalList.forEach((btnOpenModal, index) => {
+            btnOpenModal.addEventListener("click", () => {
+                modalList[index].style.display = "flex";
+            });
+        });
+
+        btnCloseModalList.forEach((btnCloseModal, index) => {
+            btnCloseModal.addEventListener("click", () => {
+                modalList[index].style.display = "none";
+            });
+        });
+    </script>
+    <div style="position: absolute; right: 80px; bottom: 50px;">
+        <a href="team.html">
+            <img style="width: 50px; height: 50px;" src="https://velog.velcdn.com/images/varjm/post/0302b9a2-77fb-4edd-9309-eb492f60b3f9/image.png">
+        </a>
+    </div>
+</body>
+</html>
