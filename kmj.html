@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Introduction</title>
-    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <style>
         body {
             margin: 0;
@@ -56,82 +56,139 @@
             box-shadow:0 2px 3px 0 rgba(34,36,38,0.15);  
             transform:translateY(-50%); 
         }
+        .btn-close-modal{
+            position: absolute; 
+            right: 80px; 
+            bottom: 50px;
+        }
+        .btn-nature {
+            background-color: #28B463;
+            border-color: #28B463;
+            color: white;
+            width: 100px;
+            height: 50px;
+        }
+
+        .btn-nature:hover {
+            background-color: #1D8348;
+            border-color: #1D8348;
+        }
+        .btn-spring {
+            background-color: #ffaec0;
+            border-color: #ffaec0;
+            color: white;
+            width: 100px;
+            height: 50px;
+        }
+
+        .btn-spring:hover {
+            background-color: #ff88ad;
+            border-color: #ff88ad;
+        }
+        .btn-summer {
+            background-color: #58ACFA;
+            border-color: #58ACFA;
+            color: white;
+            width: 100px;
+            height: 50px;
+        }
+
+        .btn-summer:hover {
+            background-color: #2E9AFE;
+            border-color: #2E9AFE;
+        }
+        .btn-autumn {
+            background-color: #FF7F50;
+            border-color: #FF7F50;
+            color: white;
+            width: 100px;
+            height: 50px;
+        }
+
+        .btn-autumn:hover {
+            background-color: #FF6347;
+            border-color: #FF6347;
+        }
+        .btn-winter {
+            background-color: #D6EAF8;
+            border-color: #D6EAF8;
+            color: white;
+            width: 100px;
+            height: 50px;
+        }
+
+        .btn-winter:hover {
+            background-color: #AED6F1;
+            border-color: #AED6F1;
+        }    
     </style>
 </head>
 <body>
-    <!-- <div class="modal">
-        <div class="modal_body">
-            <h2>모달창 제목</h2>
-            <p>모달창 내용 </p>
-            <button class="btn-close-modal">닫기</button>
-        </div>
-    </div> -->
-    
-    
     <div class="container">
         <section id="section1" class="section" 
         style="background-image : 
         url('https://cdn.imweb.me/upload/S202207202685e30f16e24/f470cb259e73b.jpeg')">
             <div >
-                <h1><button class="btn-open-modal">Intro</button></h1>
+                <button class="btn-open-modal btn btn-nature">Intro</button>
+                
                 <div class="modal">
                     <div class="modal_body">
                         <h2>자기소개</h2>
                         <p>저는 김민주 입니다 </p>
                         <p>조용하고 차분한 성격을 가진 ISTP 입니다 </p>
-                        <button class="btn-close-modal">닫기</button>
+                        <button class="btn-close-modal btn-nature" >닫기</button>
                     </div>
                 </div>
             </div>
         </section>
         <section id="section2" class="section" style="background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F8ees0%2Fbtq33bjZoFY%2F6SSEPleWKXNwMHlW3p5mvk%2Fimg.jpg')">
             <div>
-                <h1><button class="btn-open-modal">Advantage</button></h1>
+                <button class="btn-open-modal btn btn-spring">Advantage</button>
                 <div class="modal">
                     <div class="modal_body">
                         <h2>장점</h2>
                         <p> 주어진 일에 전념하고 집중합니다 </p>
                         <p> 의사결정을 내릴 때 신중합니다 </p>
                         <p> 맡은 일에 책임감을 가지고 수행합니다 </p>
-                        <button class="btn-close-modal">닫기</button>
+                        <button class="btn-close-modal btn btn-spring">닫기</button>
                     </div>
                 </div>
             </div>
             
         </section>
-        <section id="section3" class="section" style="background-image: url('https://velog.velcdn.com/images/codekmj/post/f7ed33b0-ea37-4405-a92c-9be44224e59b/image.jpg')">
+        <section id="section3" class="section" style="background-image: url('https://cdn.pixabay.com/photo/2020/02/16/07/55/beach-4852830_640.jpg')">
             <div>
-                <h1><button class="btn-open-modal">Style</button></h1>
+                <button class="btn-open-modal btn btn-summer">Style</button>
                 
                 <div class="modal">
                     <div class="modal_body">
                         <h2>스타일</h2>
                         <p>저는 팀원들의 의견을 경청하고 존중하면서 저의 주장을 제시하는 방식으로 협업을 진행하고 있습니다</p>
-                        <button class="btn-close-modal">닫기</button>
+                        <button class="btn-close-modal btn btn-summer">닫기</button>
                     </div>
                 </div>
             </div>
         </section>
         <section id="section4" class="section" style="background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F990822335A03045709')">
             <div>
-                <h1><button class="btn-open-modal">Dream</button></h1>
+                <button class="btn-open-modal btn btn-autumn">Dream</button>
                 <div class="modal">
                     <div class="modal_body">
                         <h2>목표</h2>
                         <p>저는 내일배움캠프를 통해 개발의 즐거움을 얻어가고 싶습니다</p>
-                        <button class="btn-close-modal">닫기</button>
+                        <button class="btn-close-modal btn btn-autumn">닫기</button>
                     </div>
                 </div>
             </div>
         </section>
         <section id="section5" class="section" style="background-image: url('https://images.unsplash.com/photo-1552901464-1449e53709c9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
             <div>
-                <h1><button class="btn-open-modal">Promise</button></h1>
+                <button class="btn-open-modal btn btn-winter">Promise</button>
                 <div class="modal">
                     <div class="modal_body">
                         <h2>자신과의 약속</h2>
                         <p>어제의 나보다 발전된 오늘의 나를 목표로 열심히 달려가겠습니다 </p>
-                        <button class="btn-close-modal">닫기</button>
+                        <button class="btn-close-modal btn btn-winter">닫기</button>
                     </div>
                 </div>
             </div>
