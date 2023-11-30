@@ -457,7 +457,7 @@
     </script>
 
     <!-- Fetch 현재기온을 보여줄 곳을 설정 -->
-    <p style="position:fixed;bottom:-20px;left:10px;">현재 기온 : <span id="temp"></span>°C</p>
+    <p style="position:fixed;bottom:-20px;left:10px;"><span id="temp"></span>°C</p>
 
     <!-- Fetch 가져오기 -->
     <script>
@@ -466,10 +466,10 @@
         fetch(fetchurl)
             .then(res => res.json())
             .then(data => {
-                let temp_min = '최저 기온&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_min - 273.15);
-                let temp_max = '현재 기온&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_max - 273.15);
+                let temp_min = '최저 온도&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_min - 273.15);
+                let temp_max = '최고 온도&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_max - 273.15);
     
-                $('#temp').html(temp_min + '<br>' + temp_max);
+                $('#temp').html(temp_min +'  /  '+temp_max);
     
                 console.log(data.main.temp);
             })
