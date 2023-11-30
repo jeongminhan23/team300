@@ -461,14 +461,19 @@
 
     <!-- Fetch 가져오기 -->
     <script>
-        let fetchurl = "https://spartacodingclub.shop/sparta_api/weather/seoul";
+        let fetchurl = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=ef0880109f0aac6e211fd24fdd9726b9";
+    
         fetch(fetchurl)
-        .then(res => res.json())
-    .then(data => {
-        let temp = data['temp'];
-        $('#temp').text(temp);
-        console.log(data['temp'])
-    })
+            .then(res => res.json())
+            .then(data => {
+                let temp_min = '최저 기온&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_min - 273.15);
+                let temp_max = '현재 기온&nbsp;&nbsp;&nbsp;&nbsp;' + Math.floor(data.main.temp_max - 273.15);
+    
+                $('#temp').html(temp_min + '<br>' + temp_max);
+    
+                console.log(data.main.temp);
+            })
+            .catch(error => console.log(error));
     </script>
 </body>
 
