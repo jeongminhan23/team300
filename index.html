@@ -157,7 +157,7 @@
 
         /* 이미지를 숨기기 위한 CSS */
         #imageButton {
-            
+
             width: 200px;
             /* 이미지 크기에 맞게 조정 */
             height: 50px;
@@ -168,10 +168,10 @@
             right: 840px;
             top: 1000px;
             border: 2px solid rgb(243, 1, 1);
-            
+
 
             /* 이미지를 적절하게 화면에 맞게 조정 */
-            
+
         }
 
         #backgroundImage {
@@ -185,7 +185,7 @@
             margin-bottom: 30px;
         }
 
-        #scrollbottom{
+        #scrollbottom {
             margin: 90px 0 0 0;
         }
     </style>
@@ -214,7 +214,8 @@
                 포기하지않고 성실히 임해서 수료후에도 팀에 도움이 되는 개발자가 되자!!
 
                 <h1>우리 팀의 특징</h1>
-                아직 드러나지 않았지만 알고보면 숨은 보석들의 모임&#x1F48E
+                아깎돌
+                아직 깎지 않은 돌덩이로 다듬을수록 빛이나는 보석들 입니다.&#x1F48E
 
                 <h1>우리 팀의 약속</h1>
                 <div>
@@ -236,23 +237,22 @@
     <div id="backgroundImage"></div>
 
     <script>
-         var background = document.getElementById('backgroundImage');
-  closeBackground(); // 페이지가 열리면서 백그라운드 이미지를 닫기
+        var background = document.getElementById('backgroundImage');
+        closeBackground(); // 페이지가 열리면서 백그라운드 이미지를 닫기
 
-  // 백그라운드 이미지를 닫는 함수
-  function closeBackground() {
-    background.style.display = 'none';
-  }
+        // 백그라운드 이미지를 닫는 함수
+        function closeBackground() {
+            background.style.display = 'none';
+        }
 
-  // 백그라운드 이미지를 토글하는 함수
-  function toggleBackground() {
-    if (background.style.display === 'none') {
-      background.style.display = 'block'; // 백그라운드 이미지를 보이게 함
-    } else {
-      background.style.display = 'none'; // 백그라운드 이미지를 숨김
-    }
-  }
-</script>
+        // 백그라운드 이미지를 토글하는 함수
+        function toggleBackground() {
+            if (background.style.display === 'none') {
+                background.style.display = 'block'; // 백그라운드 이미지를 보이게 함
+            } else {
+                background.style.display = 'none'; // 백그라운드 이미지를 숨김
+            }
+        }
     </script>
 
 
@@ -400,48 +400,54 @@
 
 
         // 파이어베이스에 방명록 내용을 저장하기
-        $("#guestbook_button").click(async function () {
-            let name = $('#name').val();
-            let message = $('#message').val();
+        // 웹 페이지에서 방명록이나 메시지를 작성하고, 그 정보를 Firestore 데이터베이스에 저장한 후에 페이지를 새로고침하여 업데이트하는 동작을 수행
+        $("#guestbook_button").click(async function () {  //guestbook_button이라는 ID가 클릭이 되었을 때, async function()함수가 실행시킨다.
+            let name = $('#name').val(); // 입력한name값을 변수 name에 저장한다
+            let message = $('#message').val(); // 입력한message값을 변수 message에 저장한다
             let doc = {
                 'name': name,
                 'message': message
-            };
-            await addDoc(collection(db, "visiter"), doc);
-            alert('감사합니다!♡')
-            window.location.reload();
+            }; // 입력된 이름과 메시지를 포함하는 JavaScript 객체를 생성
+            await addDoc(collection(db, "visiter"), doc);  //Firestore 데이터베이스에 visiter라는 새로운 문서를 추가한다.
+            alert('감사합니다!♡') // 작업이 성공적으로 완료시 알림창 표시
+            window.location.reload(); // 페이지를 새로고침한다. 이는 방명록이나 메시지가 성공적으로 추가되면 새로운 내용이 표시되도록 페이지를 다시 로드하는 것
         })
+        // 따라서, 이 코드는 웹 페이지에서 방명록이나 메시지를 작성하고, 그 정보를 Firestore 데이터베이스에 저장한 후에 페이지를 새로고침하여 업데이트하는 동작을 수행합니다.
+
+
+
 
         //파이어베이스에 저장된 내용을 불러오기
-        let docs = await getDocs(collection(db, "visiter"));
-        docs.forEach((doc) => {
-            let row = doc.data();
-            let name = row['name'];
-            let message = row['message'];
+        let docs = await getDocs(collection(db, "visiter")); //Firestore 데이터베이스의 "visiter" 컬렉션에서 모든 문서들을 가져옵니다. 이때 getDocs 함수는 비동기 함수이므로 await 키워드를 사용하여 해당 작업이 완료될 때까지 기다립니다.
+        docs.forEach((doc) => { // 가져온 문서들을 반복(iterate)하면서 각 문서에 대해 주어진 함수를 실행합니다.
+            let row = doc.data(); // 현재 반복 중인 문서의 데이터를 row 변수에 저장합니다. Firestore에서 각 문서는 데이터와 함께 여러 다른 속성을 가지며, .data() 메서드를 사용하여 실제 데이터에 접근할 수 있습니다.
+            let name = row['name']; 
+            let message = row['message']; // 현재 문서에서 "name"과 "message" 필드의 값을 가져와서 각각 name과 message 변수에 저장합니다.
             let temp_html = `
             <div class="col">
                     <div class="guestbook-entries">
                         <p class="card-text">${name} : ${message}</p>
                     </div>
              </div>`;
-            /*새로붙일카드형식 붙여줘*/
-            $('#guestbook-form').append(temp_html);
+
+            $('#guestbook-form').append(temp_html);  //생성된 HTML 코드를 "guestbook-form"이라는 ID를 가진 HTML 요소에 추가합니다. 이는 페이지에 동적으로 방명록 엔트리를 추가하는 역할을 합니다.
         });
+        // 따라서, 해당 코드들은 Firestore에서 가져온 방명록 문서들을 이용하여 동적으로 HTML을 생성하고, 해당 HTML을 페이지에 추가하여 방명록을 표시하는 역할을 합니다.
 
 
 
 
         function addGuestbookEntry() {
             // 이 함수를 통해 방명록에 새 항목을 추가할수 있다
-            var nameInput = document.getElementById('name');
-            var messageInput = document.getElementById('message');
+            let nameInput = document.getElementById('name');
+            let messageInput = document.getElementById('message');
 
-            var name = nameInput.value;
-            var message = messageInput.value;
+            let name = nameInput.value;
+            let message = messageInput.value;
 
             // 방명록에 새로운 항목 추가하기
-            var guestbookEntries = document.getElementById('guestbook-entries');
-            var entryDiv = document.createElement('div');
+            let guestbookEntries = document.getElementById('guestbook-entries');
+            let entryDiv = document.createElement('div');
             entryDiv.innerHTML = '<strong>' + name + ':</strong> ' + message;
             guestbookEntries.appendChild(entryDiv);
 
