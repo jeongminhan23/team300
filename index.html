@@ -461,11 +461,11 @@
 
     <!-- Fetch 가져오기 -->
     <script>
-        let fetchurl = "https://spartacodingclub.shop/sparta_api/weather/seoul";
+        let fetchurl = "http://api.openweathermap.org/data/2.5/weather?q="+'seoul'+"&appid="+"ef0880109f0aac6e211fd24fdd9726b9";
         fetch(fetchurl)
         .then(res => res.json())
     .then(data => {
-        let temp = data['temp'];
+        let temp = data['temp_max'];
         $('#temp').text(temp);
         console.log(data['temp'])
     })
