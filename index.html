@@ -456,17 +456,21 @@
         }
     </script>
 
-    <!-- Fetch 미세먼지 보여줄 곳을 설정 -->
-    <p style="position:fixed;bottom:-20px;left:10px;">현재 서울의 미세먼지 : <span id="msg"></span></p>
-    <!-- 사실 정확히는 서울이 아니라 서울시 중구의 미세먼지임 -->
+    <!-- Fetch 현재기온을 보여줄 곳을 설정 -->
+    <p style="position:fixed;bottom:-20px;left:10px;">현재 기온 : <span id="temp"></span>°C</p>
 
     <!-- Fetch 가져오기 -->
     <script>
-        let url = "http://spartacodingclub.shop/sparta_api/seoulair";
-        fetch(url).then(res => res.json()).then(data => {
-            let mise = data['RealtimeCityAir']['row'][0]['IDEX_NM']
-            $('#msg').text(mise)
-        })
+        $(document).ready(function () {
+        let url = "http://spartacodingclub.shop/sparta_api/weather/seoul";
+        fetch(url)
+        .then(res => res.json())
+    .then(data => {
+        let temp = data['temp'];
+        $('#temp').text(temp);
+        console.log(data['temp'])
+    })
+});
     </script>
 </body>
 
