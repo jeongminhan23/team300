@@ -116,13 +116,6 @@
         }
 
         footer {
-            /* padding: 0.1% 0; */
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer {
             background-color: rgba(255, 0, 0, 0.562);
             color: black;
             text-align: center;
@@ -131,6 +124,8 @@
             /* footer의 높이 */
             margin-top: 0;
             padding-bottom: 30px;
+            position: fixed;
+            bottom: 0;
         }
 
         #guestbook {
@@ -168,6 +163,7 @@
         .image-container img {
             transition: transform 0.3s ease-in-out;
         }
+
     </style>
 </head>
 
@@ -205,6 +201,10 @@
             </div>
         </div>
     </header>
+
+    <div id="team_goal" style="text-align: center;">
+        <button type="button" class="btn btn-danger" style="background-color: red;">우리 팀의 목표</button>
+    </div>
     <div class="center-gap"></div>
 
     <section id="scrollbottom">
