@@ -157,16 +157,15 @@
 
         /* 이미지를 숨기기 위한 CSS */
         #imageButton {
-
             width: 200px;
             /* 이미지 크기에 맞게 조정 */
             height: 50px;
             /* 이미지 크기에 맞게 조정 */
+            background-color: red;
             cursor: pointer;
-            background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kaka[…]dn%2FbhJ1fz%2FbtsBcZjNjwd%2FiGMrywQwCGT1Q4pUFTXu5k%2Fimg.png');
             position: absolute;
             right: 840px;
-            top: 1000px;
+            top: 1100px;
             border: 2px solid rgb(243, 1, 1);
 
 
@@ -186,7 +185,7 @@
         }
 
         #scrollbottom {
-            margin: 90px 0 0 0;
+            padding: 250px 0 0 0;
         }
     </style>
 </head>
@@ -231,9 +230,9 @@
 
 
     <div class="center-gap">
-
-        <div id="imageButton" onclick="toggleBackground()"></div>
+        <button id="imageButton" type="button" class="btn btn-danger" onclick="toggleBackground()">코딩을 정복하리라</button>
     </div>
+
     <div id="backgroundImage"></div>
 
     <script>
