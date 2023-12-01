@@ -28,6 +28,7 @@
     }
 
     .section {
+        min-width:1400px;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -37,16 +38,16 @@
         text-align: center;
         scroll-snap-align: center;
     }
-
     #section2 {
         flex-direction: row;
         justify-content: center;
         flex-wrap: nowrap;
 
     }
-
     #section3 {
         background-color:rgb(243, 235, 226);
+    }
+    #section4 {
     }
 
     footer {
@@ -90,24 +91,18 @@
         text-align: center;
     }
 
-    .dv-b:hover {
-        background-image: url();
-    }
-
-
-    #hoverimage {}
-
-    #introduction_text {
-        margin-bottom: 20px;
-    }
-
-    #hoverimage:hover {
-        cursor: pointer;
-    }
+    
 
     #introduction_text {
         color: rgb(44, 66, 57);
         letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    #introduction_text2 {
+        color: rgb(74, 136, 109);
+        letter-spacing: 3px;
+        margin-bottom: 20px;
     }
 
     #background_hover {
@@ -145,8 +140,8 @@
                 <p id="foot">Introduction</p>
             </header>
             <section id="section2" style="height:90vh; width:100%" class="section">
-                <div
-                    style="width:12%; height:50vh; font-size: 20px; text-align:left; line-height:1.2em; margin-right: 0px;">
+                <div 
+                    style=" width:12%; height:50vh; font-size: 20px; text-align:left; line-height:1.2em; margin-right: 0px;">
                     <p id="introduction_text">이름</p>
                     <p id="introduction_text">나이</p>
                     <p id="introduction_text">사는 곳</p>
@@ -159,14 +154,14 @@
                 </div>
                 <div
                     style="width:28%; height:50vh; font-size: 20px; text-align:left; line-height:1.2em; margin-right: 50px;">
-                    <p id="introduction_text">: 김건우 </p>
-                    <p id="introduction_text">: 29살, 94년생 </p>
-                    <p id="introduction_text">: 서울 </p>
-                    <p id="introduction_text">: INTP </p>
-                    <p id="introduction_text">: 즐거운 분위기 좋아함</p>
-                    <p id="introduction_text">: 팀을 위해 배려하려고 노력</p>
-                    <p id="introduction_text">: 탄탄하게 성장하는 개발자</p>
-                    <p id="introduction_text">: 모르더라도 끝까지 해보자</p>
+                    <p id="introduction_text2">: 김건우 </p>
+                    <p id="introduction_text2">: 29살, 94년생 </p>
+                    <p id="introduction_text2">: 서울 </p>
+                    <p id="introduction_text2">: INTP </p>
+                    <p id="introduction_text2">: 즐거운 분위기 좋아함</p>
+                    <p id="introduction_text2">: 팀을 위해 배려하려고 노력</p>
+                    <p id="introduction_text2">: 탄탄하게 성장하는 개발자</p>
+                    <p id="introduction_text2">: 모르더라도 끝까지 해보자</p>
 
                 </div>
                 <div class="imagecard">
@@ -189,11 +184,16 @@
 
         <section id="section4" style="background-color:white;" class="section">
             <h1 style="font-size: 13vh; color:rgb(88, 230, 183); margin-bottom:70px;">Contact</h1>
-            <div style="display:flex; width:42%; align-items: center; text-align: center;">
-                
-                <a href="https://github.com/hongdul/sparta"><img style="width:200px; height:200px;" src="https://velog.velcdn.com/images/kkw0426/post/109b49bb-4661-4b23-9334-4345dee9af6d/image.png"></a>
-                <a href="https://www.instagram.com/_kunw/"><img style="width:200px; height:200px;" src="https://velog.velcdn.com/images/kkw0426/post/50069820-2617-4bc3-83ef-63634b3e8842/image.jpeg"></a>
-                <a href="https://velog.io/@kkw0426"><img style="width:150px; height:150px; margin-left:23px;" src="https://velog.velcdn.com/images/kkw0426/post/31ed1e7c-0610-4286-9539-8353c691b7b0/image.png"></a>
+            <div style="display:flex; justify-content: center; width: 100%; align-items: center; ">
+                <div style="width:200px; height:200px; object-fit: cover;">
+                    <a href="https://git>hub.com/hongdul/sparta"><img src="https://velog.velcdn.com/images/kkw0426/post/109b49bb-4661-4b23-9334-4345dee9af6d/image.png"></a>
+                </div>
+                <div style="width:200px; height:200px; object-fit: cover;">
+                    <a href="https://www.instagram.com/_kunw/"><img src="https://velog.velcdn.com/images/kkw0426/post/50069820-2617-4bc3-83ef-63634b3e8842/image.jpeg"></a>
+                </div>
+                <div style="width:220px; height:150px; object-fit: cover;">
+                    <a href="https://velog.io/@kkw0426"><img src="https://velog.velcdn.com/images/kkw0426/post/31ed1e7c-0610-4286-9539-8353c691b7b0/image.png"></a>
+                </div>
             </div>
         </section>
 
